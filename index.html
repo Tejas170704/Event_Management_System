@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Event Manager</h1>
+            <p>Organize and track your upcoming activities effortlessly</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Left Column: Form -->
+            <div class="card">
+                <h2 class="card-title">Add New Event</h2>
+                <form id="event-form">
+                    <div class="form-group">
+                        <label for="eventName">Event Name *</label>
+                        <input type="text" id="eventName" placeholder="e.g., Annual Tech Conference" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDate">Date *</label>
+                        <input type="date" id="eventDate" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventLocation">Location *</label>
+                        <input type="text" id="eventLocation" placeholder="e.g., Virtual or City Hall" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDesc">Description (Optional)</label>
+                        <textarea id="eventDesc" placeholder="Brief details about the event..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventImage">Event Image (Optional, Max 2MB)</label>
+                        <input type="file" id="eventImage" accept="image/*" class="file-input" />
+                        <img id="imagePreview" alt="Preview" />
+                    </div>
+
+                    <button type="submit">Save Event</button>
+                </form>
+            </div>
+
+            <!-- Right Column: Event List -->
+            <div class="card">
+                <h2 class="card-title">Upcoming Events</h2>
+                <div id="event-list" class="event-list">
+                    <!-- Events will be dynamically injected here -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Tejas Dhule. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
